@@ -1,0 +1,84 @@
+#game{
+	background: #D4E4F7;
+	width: 600px;
+	height: 400px;
+	margin: 0 auto;
+	position: relative;
+	border: 2px solid grey;
+	overflow: hidden;
+}
+
+
+.ball{
+	background: #FC7307;
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	position: absolute;
+	top: -225px;
+	left: -325px;
+	display: block;
+	transition: all 1s;
+}
+
+.left{
+	top: 100px;
+	left: -100px;
+}
+
+.right{
+	top: 100px;
+	left: 700px;
+}
+
+#score{
+	color: #341C09;
+	font-size: 40px;
+	font-weight: bold;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+
+#lifes{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+#lifes span{
+	width: 20px;
+	height: 20px;
+	border-radius: 50% ;
+	border: 3px solid #C11101;
+	background: linear-gradient(to bottom, #ff9900 0%, #ff0000 100%);
+	display: block;
+	float: left;
+}
+#start-block{
+	width: 100%;
+	height: 100%;
+	background: #eaa46f;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#start-block button{
+	display: block;
+	margin: 100px auto;
+	padding: 40px 80px;
+	font-size: 30px;
+	background: grey;
+}
+
+#kinec{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: #eaa46f;
+	color: #0A56AE;
+	text-align: center;
+	font-size: 40px;
+}
