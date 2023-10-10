@@ -4,6 +4,9 @@ function random(max){
 	return rand;
 }
 
+
+
+
 function createStartBlock(){
 	//<div id="start-block">
  	startBlock = document.createElement("div"); 
@@ -15,7 +18,6 @@ function createStartBlock(){
 
  	startBlock.appendChild(startButton);
 	
-
  	gameField.appendChild(startBlock);
 }
 
