@@ -14,6 +14,7 @@ function createStartBlock(){
  	startButton.innerText = "start game";
 
  	startBlock.appendChild(startButton);
+	
 
  	gameField.appendChild(startBlock);
 }
