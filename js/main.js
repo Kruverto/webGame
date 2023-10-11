@@ -1,15 +1,18 @@
-/*час 
-зменшуєься 
-ресетається кожних n поїнтів 
+/*
++час 
++зменшуєься 
++ресетається кожних n поїнтів 
 
-хп 
-- від бомб (+ хард коли випали за екран)
++хп 
++- від бомб (+ хард коли випали за екран)
 
-бомби
++бомби
 
-прогресбар часу
++прогресбар часу
 
 рестарт
+
+виведення статистики і рекорду  
 
 */
 function start(){
@@ -23,38 +26,77 @@ function start(){
 
 function play(){
 	status = "play";
-
 	deleteStarBlock();
+
+	createProgressbar();
 
 	createScore();
 
 	createLifes();
 
 	createBall();
+
+	createBomb();
 	
 	gameTimer();
+
+
+
 }
 
 start();
 
 
+function restart(){
+	deleteEnd();
+	clearInfoblock();
 
+	console.log(nLifes);
+	console.log(lifes);
+	console.log(diff);
+	console.log(status);
+	console.log(points);
+	console.log(lvlprogres);
+	console.log(score);
+//setTimeout(function(){
+nLifes = 3;
+lifes = null;
+diff = 3;
+//status = "strar";
+points = 0;
+lvlprogres = null;
+
+//}, 1000);
+
+start();
+	//createStartBlock();
+	//createTimerBlock();
+
+	//startButton.onclick = start;
+
+
+}
 
 
 
 
 function finish(){
 	status = "finish";
+	//clearInterval(time);
 	deleteScore();
 	deleteLifes();
+	deleteProgressbar();
 	cleangameField();
 	createEnd();
 
+	restartButton.onclick = restart;
 }
 
 function gameTimer(){
 
-	var chasy = setInterval(function() {
+	var time = setInterval(function() {
+
+		if (status != "finish") {
 
 	timerBlock.innerText = timerBlock.innerText - 1;
 		
@@ -66,13 +108,23 @@ function gameTimer(){
 			nextlvl = Math.floor(nextlvl *= 1.5);
 			//console.log(nextlvl);
 		}
-
+		
 		if(timerBlock.innerText == 0){
 			
-			clearInterval(chasy);
+			//clearInterval(time);
 			
 			finish();
 		}
+		
+		if (status == "finish"){
+			clearInterval(time);
+		}
+	}
+
+	//clearInterval(time)
 
 	},1000);
+	//clearInterval(time);
 }
+
+//gameTimer

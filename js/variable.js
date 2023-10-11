@@ -21,7 +21,7 @@ var status = "open";
 
 var timerBlock = null;
 
-var gameField = document.querySelector("#game");
+var gameField = document.querySelector("#gameField");
 
 var infoBlock = document.querySelector("#info-block");
 

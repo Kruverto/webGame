@@ -5,7 +5,26 @@ function random(max){
 }
 
 
+function createProgressbar(){
+	progressbar = document.createElement("div");
+	progressbar.id = "progressbar";
 
+	infoBlock.appendChild(progressbar);
+
+	setInterval(function() {
+		var koef = (timerBlock.innerText/30) * 100;
+		progressbar.style.width = koef  + "%";
+		if (koef <= 50 && koef >= 20){
+			progressbar.style.background = "#dfed19"
+		}if (koef < 20){
+			progressbar.style.background = "#ed2e19"
+		}
+
+	},10)
+
+
+
+}
 
 function createStartBlock(){
 	//<div id="start-block">
@@ -33,6 +52,8 @@ function createTimerBlock(){
 
 	infoBlock.appendChild(h2);
 }
+
+
 
 function createBall() {
 	//new block div 
@@ -64,18 +85,29 @@ function createBall() {
 			ball.style.opacity = "0";
 		
 			setTimeout(function(){
-			 		ball.remove();
+		 		ball.remove();
 
-			 		var isExist = document.querySelector(".ball");
-			 		if(isExist == null){
-			 	 		var nBall = random(diff);
-			 			var nNowBall = 0;
-			 			while(nNowBall < nBall){
-							createBall();
-							nNowBall =nNowBall + 1;
-			 			}
-			 		}
-			 	},200);
+		 		var isExist = document.querySelector(".ball");
+		 		if(isExist == null){
+					//bomb.remove();
+
+		 	 		var nBall = random(diff);
+					var nBomb = random(Math.floor(diff/3));
+
+		 			var nNowBall = 0;
+					var nNowBomb = 0;
+
+		 			while(nNowBall < nBall){
+						createBall();
+						nNowBall ++;
+		 			}
+
+					 while(nNowBomb < nBomb){
+						createBomb();
+						nNowBomb ++;
+		 			}
+		 		}
+		 	},200);
 			
 		}
 		ball.className = "ball waitToDelete";
@@ -93,7 +125,8 @@ function createBall() {
 			if (ball.offsetTop > 400) {
 				ball.remove();
 				createBall();
-				nLifes --;
+				//createBomb();
+				//nLifes --;
 				if (nLifes == 0) {
 					finish();
 				}
@@ -108,9 +141,83 @@ function createBall() {
 		gameField.appendChild(ball);
 	}
 
+	
 }
 
-//function createBall() {
+
+
+function createBomb() {
+	var bomb = document.createElement("div");
+
+	bomb.className = "bomb";
+
+	var triger = 0; 
+
+	var direction = random(2);
+
+	if(direction == 1) {
+		bomb.className = "bomb left";
+	}else{
+		bomb.className = "bomb right";
+	}
+
+	setTimeout(function() {
+		bomb.style.top = random(350) + 	"px";
+		bomb.style.left = random(550) + "px";
+	},200)
+
+	bomb.onmousemove = function(){
+
+		triger = 1;
+		bomb.style.transition = "all 0s";
+		bomb.remove();
+			
+	}
+
+	var trigerBomb = setInterval(function() {
+			if ( triger != 0){
+				nLifes --;
+				triger = 0
+				if (nLifes == 0) {
+					finish();
+				}
+				deleteLifes();
+				createLifes();
+				clearInterval(trigerBomb);
+				//console.log(nLifes);
+			}
+	},10)
+
+	setTimeout(function() {
+		bomb.style.transition = "all 0s";
+		var timerBomb = setInterval(function() {
+			bomb.style.top = bomb.offsetTop + 1 + "px"
+			if (bomb.offsetTop > 400) {
+				bomb.remove();
+				//createBomb();
+				//nLifes --;
+				if (nLifes == 0) {
+					finish();
+				}
+				deleteLifes();
+				createLifes();
+				clearInterval(timerBomb);
+			}
+		},10)
+	}, 1000);
+	
+	if (status != "finish") {
+		gameField.appendChild(bomb);
+	}
+
+}
+
+
+
+
+
+
+
 
 
 
@@ -144,8 +251,8 @@ function createLifes(){
 		*/
 function createEnd(){
 	//<div id="konec">
-	var div = document.createElement("div");
-		div.id = "kinec";
+	var end = document.createElement("div");
+		end.id = "end";
 	
 	//<h2>кінець гри!</h2>
 	var h2 = document.createElement("h2");
@@ -155,16 +262,25 @@ function createEnd(){
 	var h3 = document.createElement("h3");		
 		h3.innerText = "Bи набрали " + points + " очків";
 
-	div.appendChild(h2);
+	restartButton = document.createElement("button");
+	//startButton.id = "start-knopka";
+	restartButton.innerText = "restart game";
+   
 
-	div.appendChild(h3);
+	end.appendChild(h2);
 
-	gameField.appendChild(div);
+	end.appendChild(h3);
+
+	end.appendChild(restartButton);
+
+	gameField.appendChild(end);
 
 }
 
 
-
+function deleteProgressbar(){
+	progressbar.remove();
+}
 
 function deleteStarBlock(){
 	startBlock.remove();
@@ -185,4 +301,31 @@ function deleteTimerBlock(){
 
 function cleangameField(){
 	gameField.innerText = "";
+}
+
+function clearInfoblock(){
+	infoBlock.innerText = "";
+}
+
+
+function deleteEnd(){
+	end.remove();
+
+	//score = null;
+	//хп
+	//lifes = null;
+
+	//diff = 3;
+
+	//nextlvl = 30;
+
+	//lvlprogres = null;
+
+	//nLifes = 3;
+
+	//points = 0;
+
+	//status = "open";
+
+	//timerBlock = null;
 }
