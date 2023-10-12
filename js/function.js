@@ -12,9 +12,14 @@ function createProgressbar(){
 	infoBlock.appendChild(progressbar);
 
 	setInterval(function() {
-		var koef = (timerBlock.innerText/30) * 100;
+
+		//var koef = (timerBlock.innerText/30) * 100;
+		var koef = (lvlprogres/nextlvl) * 100;
+
 		progressbar.style.width = koef  + "%";
-		if (koef <= 50 && koef >= 20){
+		if (koef > 50){
+		progressbar.style.background = "#10c506"
+		}if (koef <= 50 && koef >= 20){
 			progressbar.style.background = "#dfed19"
 		}if (koef < 20){
 			progressbar.style.background = "#ed2e19"
@@ -126,7 +131,9 @@ function createBall() {
 				ball.remove();
 				createBall();
 				//createBomb();
-				//nLifes --;
+				if (gameMode != 0){
+					nLifes --;
+				}
 				if (nLifes == 0) {
 					finish();
 				}
@@ -212,7 +219,50 @@ function createBomb() {
 
 }
 
+function recordHS(){	
 
+//var prevScore;
+//var tempscore;
+//note1.innerText = 0;
+
+//prevScore = note1.innerText;
+
+
+
+if (points > record1){
+	record5 = record4;
+	record4 = record3;
+	record3 = record2;
+	record2 = record1;
+	record1 = points;
+}if (points > record2 && points < record1){
+	record5 = record4;
+	record4 = record3;
+	record3 = record2;
+	record2 = points;
+}if (points > record3 && points < record2){
+	record5 = record4;
+	record4 = record3;
+	record3 = points;
+}if (points > record4 && points < record3){
+	record5 = record4;
+	record4 = points;
+}if (points > record5 && points < record4){
+	record5 = points;
+}
+
+note1.innerText = record1;
+note2.innerText = record2;
+note3.innerText = record3;
+note4.innerText = record4;
+note5.innerText = record5;
+
+
+
+
+
+
+}
 
 
 

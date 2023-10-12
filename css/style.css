@@ -8,6 +8,23 @@
 	overflow: hidden;
 }
 
+#highestScore{
+	background: #a4b3c6;
+	width: 300px;
+	height: 400px;
+	margin: 0 auto;
+	position: absolute;
+	border: 2px solid rgb(244, 126, 126);
+	overflow: hidden;
+	top: auto;
+	left: auto;
+	text-align: center;
+}
+
+#info-block{
+	text-align: center;
+}
+
 #progressbar{
 	width: 100%;
 	height: 2%;
@@ -53,7 +70,7 @@
 }
 
 #score{
-	color: #341C09;
+	color: #1ff14984;
 	font-size: 40px;
 	font-weight: bold;
 	position: absolute;

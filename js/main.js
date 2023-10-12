@@ -10,10 +10,11 @@
 
 +прогресбар часу
 
-рестарт
++рестарт
 
 виведення статистики і рекорду  
 
+режими
 */
 function start(){
 	createStartBlock();
@@ -58,6 +59,8 @@ function restart(){
 	console.log(points);
 	console.log(lvlprogres);
 	console.log(score);
+
+
 //setTimeout(function(){
 nLifes = 3;
 lifes = null;
@@ -81,6 +84,9 @@ start();
 
 
 function finish(){
+
+	var gameScore = points;
+	recordHS();
 	status = "finish";
 	//clearInterval(time);
 	deleteScore();
@@ -116,12 +122,14 @@ function gameTimer(){
 			finish();
 		}
 		
-		if (status == "finish"){
-			clearInterval(time);
-		}
+		//if (status == "finish"){
+			//clearInterval(time);
+		//}
+	}
+	else if(status == "finish"){
+			clearInterval(time)
 	}
 
-	//clearInterval(time)
 
 	},1000);
 	//clearInterval(time);
