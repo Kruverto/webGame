@@ -1,24 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>ігра</title>
+	<title>Гра</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
 </head>
 <body>
 
 	<div id="info-block"></div>
 
-	<div id="highestScore">
+	<div id="statLeft" >
 		<h2>найвищі рахунки:</h2>
-		<p id="note1"></p>
-		<p id="note2"></p>
-		<p id="note3"></p>
-		<p id="note4"></p>
-		<p id="note5"></p>
+		<p id="note1">0</p>
+		<p id="note2">0</p>
+		<p id="note3">0</p>
+		<p id="note4">0</p>
+		<p id="note5">0</p>
 	</div>
-
+	
 	<div id="gameField"></div>
 
+	<div id="statRight">
+		<!-- Rounded switch -->
+		<label class="switch">
+			<input type="checkbox" id="myCheck" onclick="myFunction()">
+			<span class="slider round"></span>
+		</label>
+
+	</div>
 
 <script src="js/variable.js"></script>
 <script src="js/function.js"></script>

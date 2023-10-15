@@ -4,32 +4,53 @@ function random(max){
 	return rand;
 }
 
+function myFunction() {
+	// Get the checkbox
+
+	var checkBox = document.getElementById("myCheck");
+	// Get the output text
+	//var text = document.getElementById("text");
+  
+	// If the checkbox is checked, display the output text
+	if (checkBox.checked == true){
+		gameMode = 1;
+	} else {
+		gameMode = 0;
+	}
+	console.log(gameMode);
+	
+  }
+
 
 function createProgressbar(){
 	progressbar = document.createElement("div");
-	progressbar.id = "progressbar";
+	progressbar.id = "progressbar1";
+	progressbar2 = document.createElement("div");
+	progressbar2.id = "progressbar2";
 
 	infoBlock.appendChild(progressbar);
+	infoBlock.appendChild(progressbar2);
 
 	setInterval(function() {
 
-		//var koef = (timerBlock.innerText/30) * 100;
-		var koef = (lvlprogres/nextlvl) * 100;
+		var koef = (timerBlock.innerText/30) * 100;
+		//var koef = (lvlprogres/nextlvl) * 100;
 
 		progressbar.style.width = koef  + "%";
 		if (koef > 50){
-		progressbar.style.background = "#10c506"
+		progressbar.style.background = "#fcfecd"
 		}if (koef <= 50 && koef >= 20){
-			progressbar.style.background = "#dfed19"
+			progressbar.style.background = "#CC9D86"
 		}if (koef < 20){
-			progressbar.style.background = "#ed2e19"
+			progressbar.style.background = "#CC6156"
 		}
 
+		var koef2 = (lvlprogres/nextlvl) * 100;
+		progressbar2.style.width = koef2 + "%";
+
 	},10)
-
-
-
 }
+
 
 function createStartBlock(){
 	//<div id="start-block">
@@ -39,6 +60,15 @@ function createStartBlock(){
  	startButton = document.createElement("button");
  	//startButton.id = "start-knopka";
  	startButton.innerText = "start game";
+
+	rules = document.createElement("p");
+	rules.innerText = "sfo;jgojsfd gfessef sefsfe r fg tdg td zg tdhg dt hhdt zhtz dth   ef rag r5ega ,mwb hjebrmjgh k erjh IUERAGH JHKEU HKARH ER gighu ";
+
+	rules2 = document.createElement("p");
+	rules2.innerText = "sfo;jgojsfd gfessef sefsfe r fg tdg td zg tdhg dt hhdt zhtz dth   ef rag r5ega ,mwb hjebrmjgh k erjh IUERAGH JHKEU HKARH ER gighu ";
+
+	startBlock.appendChild(rules);
+	startBlock.appendChild(rules2);
 
  	startBlock.appendChild(startButton);
 	
@@ -126,7 +156,7 @@ function createBall() {
 	setTimeout(function() {
 		ball.style.transition = "all 0s";
 		var timerBall = setInterval(function() {
-			ball.style.top = ball.offsetTop + 1 + "px"
+			ball.style.top = ball.offsetTop + 1 + "px";
 			if (ball.offsetTop > 400) {
 				ball.remove();
 				createBall();
@@ -198,7 +228,7 @@ function createBomb() {
 	setTimeout(function() {
 		bomb.style.transition = "all 0s";
 		var timerBomb = setInterval(function() {
-			bomb.style.top = bomb.offsetTop + 1 + "px"
+			bomb.style.top = bomb.offsetTop + 1 + "px";
 			if (bomb.offsetTop > 400) {
 				bomb.remove();
 				//createBomb();
@@ -330,6 +360,7 @@ function createEnd(){
 
 function deleteProgressbar(){
 	progressbar.remove();
+	progressbar2.remove();
 }
 
 function deleteStarBlock(){

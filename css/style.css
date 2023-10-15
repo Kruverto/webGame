@@ -1,41 +1,90 @@
-#gameField{
-	background: #D4E4F7;
-	width: 600px;
-	height: 400px;
-	margin: 0 auto;
-	position: relative;
-	border: 2px solid grey;
-	overflow: hidden;
-}
-
-#highestScore{
-	background: #a4b3c6;
-	width: 300px;
-	height: 400px;
-	margin: 0 auto;
-	position: absolute;
-	border: 2px solid rgb(244, 126, 126);
-	overflow: hidden;
-	top: auto;
-	left: auto;
-	text-align: center;
+body{
+	background-image: url(../image/bg2.mov);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: #050505;
+	color:#fcfecd;
+	font-family: 'Tilt Neon', sans-serif;
 }
 
 #info-block{
-	text-align: center;
+	background-color: #383838;
+	margin: 0%;
+	padding-top: 30px;
+	padding-bottom: 20px;
+	height: 2%;
+	width: 100%;
+	left: 0px;
+	top: 0px;
+	position:absolute;
+	border-radius: 10px;
 }
 
-#progressbar{
+#info-block h2{
+	text-align: center;
+	margin:0%;
+}
+
+#gameField{
+	background: #383838;
+	width: 600px;
+	height: 400px;
+	margin: 0 auto;
+	position: absolute;
+	overflow: hidden;
+	top: 12%;
+	left: 32%;
+	border-radius: 10px;
+
+}
+
+#statLeft{
+	background: #383838;
+	width: 18%;
+	height: 400px;
+	margin: 0 auto;
+	position: absolute;
+	overflow: hidden;
+	top: 12%;
+	left: 12%;
+	text-align: center;
+	border-radius: 10px;
+}
+
+#statRight{
+	background: #383838;
+	width: 18%;
+	height: 400px;
+	margin: 0 auto;
+	position: absolute;
+	overflow: hidden;
+	top: 12%;
+	right: 12%;
+	text-align: center;
+	border-radius: 10px;
+}
+
+#progressbar1{
 	width: 100%;
-	height: 2%;
+	height: 10px;
 	position: absolute;
 	top: 0;
 	left: 0;
-	background: #10c506;
+	background: #737373;
+}
+
+#progressbar2{
+	width: 100%;
+	height: 10px;
+	position: absolute;
+	top: 10px;
+	left: 0;
+	background: #737373;
+	border: #000000 2px;
 }
 
 .ball{
-	background: #FC7307;
+	background: #fcfecd;
 	width: 25px;
 	height: 25px;
 	border-radius: 50%;
@@ -48,7 +97,8 @@
 
 
 .bomb{
-	background: #010101;
+	/*background: #010101;*/
+	background: #050505;
 	width: 25px;
 	height: 25px;
 	border-radius: 50%;
@@ -70,7 +120,8 @@
 }
 
 #score{
-	color: #1ff14984;
+	/*color: #1ff14984;*/
+	color: #737373;
 	font-size: 40px;
 	font-weight: bold;
 	position: absolute;
@@ -87,26 +138,34 @@
 #lifes span{
 	width: 20px;
 	height: 20px;
-	border-radius: 50% ;
+	border-radius: 50% ;/*
 	border: 3px solid #C11101;
-	background: linear-gradient(to bottom, #ff9900 0%, #ff0000 100%);
+	background: linear-gradient(to bottom, #ff9900 0%, #ff0000 100%);*/
+	background: #737373;
 	display: block;
 	float: left;
 }
 #start-block{
 	width: 100%;
 	height: 100%;
-	background: #eaa46f;
+	background: #383838;
 	position: absolute;
 	top: 0;
 	left: 0;
+	font-size: 25px;
 }
 #start-block button{
 	display: block;
-	margin: 100px auto;
-	padding: 40px 80px;
-	font-size: 30px;
-	background: grey;
+	margin: 30px auto;
+	padding: 25px 150px;
+	font-size: 40px;
+	background: #737373;
+	border-radius: 20px;
+	color: #000000;
+}
+
+#start-block p{
+	margin: 20px 50px 10px 50px;
 }
 
 #end{
@@ -115,8 +174,8 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	background: #eaa46f;
-	color: #0A56AE;
+	background: #383838;
+	color: #fcfecd;
 	text-align: center;
 	font-size: 40px;
 }
@@ -126,7 +185,9 @@
 	margin: 5px auto;
 	padding: 40px 80px;
 	font-size: 30px;
-	background: grey;
+	background: #737373;
+	color: #000000;
+	border-radius: 20px;
 }
 
 #end h2{
@@ -136,3 +197,69 @@
 #end h3{
 	margin: 30px auto;
 }
+
+  /* -------------------------------------------------------------------*/
+/* The switch - the box around the slider */
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 34px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ccc;
+	-webkit-transition: .4s;
+	transition: .4s;
+  }
+  
+  .slider:before {
+	position: absolute;
+	content: "";
+	height: 26px;
+	width: 26px;
+	left: 4px;
+	bottom: 4px;
+	background-color: white;
+	-webkit-transition: .4s;
+	transition: .4s;
+  }
+  
+  input:checked + .slider {
+	background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+	box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+	-webkit-transform: translateX(26px);
+	-ms-transform: translateX(26px);
+	transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+	border-radius: 34px;
+  }
+  
+  .slider.round:before {
+	border-radius: 50%;
+  }
+
+  /* -------------------------------------------------------------------*/

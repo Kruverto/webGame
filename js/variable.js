@@ -37,5 +37,4 @@ var record3 = 0;
 var record4 = 0;
 var record5 = 0;
 
-var gameMode = 1; 
-
+var gameMode = 0; 

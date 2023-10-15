@@ -22,7 +22,6 @@ function start(){
 
 	startButton.onclick = play;
 
-
 }
 
 function play(){
@@ -87,6 +86,7 @@ function finish(){
 
 	var gameScore = points;
 	recordHS();
+	//switchGameMode();
 	status = "finish";
 	//clearInterval(time);
 	deleteScore();
@@ -96,15 +96,18 @@ function finish(){
 	createEnd();
 
 	restartButton.onclick = restart;
+
 }
 
 function gameTimer(){
 
 	var time = setInterval(function() {
-
+		//switchGameMode2();
 		if (status != "finish") {
 
 	timerBlock.innerText = timerBlock.innerText - 1;
+
+	console.log(diff);
 		
 		if (lvlprogres >= nextlvl ){
 			timerBlock.innerText = "30";
