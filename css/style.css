@@ -4,7 +4,7 @@ body{
 	background-size: cover;
 	background-color: #050505;
 	color:#fcfecd;
-	font-family: 'Tilt Neon', sans-serif;
+	font-family: 'Tektur', sans-serif;
 	font-size: 1vw;
 }
 
@@ -14,11 +14,12 @@ body{
 	padding-top: 30px;
 	padding-bottom: 20px;
 	height: 2%;
-	width: 100%;
-	left: 0px;
-	top: 0px;
+	width: 78%;
+	left: 12%;
+	top: 3%;
 	position:absolute;
 	border-radius: 10px;
+	max-height: 80px;
 }
 
 #info-block h2{
@@ -33,7 +34,7 @@ body{
 	margin: 0 auto;
 	position: absolute;
 	overflow: hidden;
-	top: 12%;
+	top: 15%;
 	left: 32%;
 	border-radius: 10px;
 
@@ -46,7 +47,7 @@ body{
 	margin: 0 auto;
 	position: absolute;
 	overflow: hidden;
-	top: 12%;
+	top: 15%;
 	left: 12%;
 	text-align: center;
 	border-radius: 10px;
@@ -54,18 +55,18 @@ body{
 
 #statRight{
 	background: #383838;
-	width: 18%;
+	width: 20%;
 	height: 50%;
 	margin: 0 auto;
 	position: absolute;
 	overflow: hidden;
-	top: 12%;
-	right: 12%;
+	top: 15%;
+	right: 10%;
 	text-align: left;
 	border-radius: 10px;
 }
 #statRight p{
-	margin: 5% 8% 2.5% 8%;
+	margin: 5% 6% 2.5% 8%;
 }
 
 #marg{
@@ -176,7 +177,7 @@ body{
 }
 
 #gameName{
-	font-size: 6vw;	
+	font-size: 5vw;	
 }
 
 #start-block p{
@@ -282,3 +283,14 @@ body{
   }
 
   /* -------------------------------------------------------------------*/
+
+footer{
+	position: absolute;
+	top: 88%;
+	left: 0%;
+	background-color: #161414;
+	width: 100%;
+	text-align: center;
+	color: #737373;
+
+}

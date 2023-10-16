@@ -63,7 +63,7 @@ function createStartBlock(){
 
 	gameName = document.createElement("p");
 	gameName.id = "gameName";
-	gameName.innerText = "КРУГОЛОВ";
+	gameName.innerText = "СВІТЛОЛОВ";
 
 	rules2 = document.createElement("p");
 	rules2.innerText = "Ціль гри зловити якнайбільше очок.";
