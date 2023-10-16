@@ -38,3 +38,8 @@ var record4 = 0;
 var record5 = 0;
 
 var gameMode = 0; 
+
+var h = gameField.offsetHeight;
+console.log(h);
+var w = gameField.offsetWidth;
+console.log(w);

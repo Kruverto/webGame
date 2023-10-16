@@ -59,15 +59,16 @@ function createStartBlock(){
  	//<button id="start-knopka"> start</button>
  	startButton = document.createElement("button");
  	//startButton.id = "start-knopka";
- 	startButton.innerText = "start game";
+ 	startButton.innerText = "Розпочати гру";
 
-	rules = document.createElement("p");
-	rules.innerText = "sfo;jgojsfd gfessef sefsfe r fg tdg td zg tdhg dt hhdt zhtz dth   ef rag r5ega ,mwb hjebrmjgh k erjh IUERAGH JHKEU HKARH ER gighu ";
+	gameName = document.createElement("p");
+	gameName.id = "gameName";
+	gameName.innerText = "КРУГОЛОВ";
 
 	rules2 = document.createElement("p");
-	rules2.innerText = "sfo;jgojsfd gfessef sefsfe r fg tdg td zg tdhg dt hhdt zhtz dth   ef rag r5ega ,mwb hjebrmjgh k erjh IUERAGH JHKEU HKARH ER gighu ";
+	rules2.innerText = "Ціль гри зловити якнайбільше очок.";
 
-	startBlock.appendChild(rules);
+	startBlock.appendChild(gameName);
 	startBlock.appendChild(rules2);
 
  	startBlock.appendChild(startButton);
@@ -149,15 +150,15 @@ function createBall() {
 	}
 
 	setTimeout(function() {
-		ball.style.top = random(350) + 	"px";
-		ball.style.left = random(550) + "px";
+		ball.style.top = random(h - (h * 0.125)) + "px";
+		ball.style.left = random(w - (w * 0.125)) + "px";
 	},200)
 
 	setTimeout(function() {
 		ball.style.transition = "all 0s";
 		var timerBall = setInterval(function() {
 			ball.style.top = ball.offsetTop + 1 + "px";
-			if (ball.offsetTop > 400) {
+			if (ball.offsetTop > h) {
 				ball.remove();
 				createBall();
 				//createBomb();
@@ -199,8 +200,8 @@ function createBomb() {
 	}
 
 	setTimeout(function() {
-		bomb.style.top = random(350) + 	"px";
-		bomb.style.left = random(550) + "px";
+		bomb.style.top = random(h - (h * 0.125)) + 	"px";
+		bomb.style.left = random(w - (w * 0.125)) + "px";
 	},200)
 
 	bomb.onmousemove = function(){
@@ -229,7 +230,7 @@ function createBomb() {
 		bomb.style.transition = "all 0s";
 		var timerBomb = setInterval(function() {
 			bomb.style.top = bomb.offsetTop + 1 + "px";
-			if (bomb.offsetTop > 400) {
+			if (bomb.offsetTop > h) {
 				bomb.remove();
 				//createBomb();
 				//nLifes --;
@@ -340,11 +341,11 @@ function createEnd(){
 	
 	//<h3>ви набрали 100 очків</h3>
 	var h3 = document.createElement("h3");		
-		h3.innerText = "Bи набрали " + points + " очків";
+		h3.innerText = "Bи набрали " + points + " очок";
 
 	restartButton = document.createElement("button");
 	//startButton.id = "start-knopka";
-	restartButton.innerText = "restart game";
+	restartButton.innerText = "Грати заново";
    
 
 	end.appendChild(h2);

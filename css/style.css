@@ -5,6 +5,7 @@ body{
 	background-color: #050505;
 	color:#fcfecd;
 	font-family: 'Tilt Neon', sans-serif;
+	font-size: 1vw;
 }
 
 #info-block{
@@ -27,8 +28,8 @@ body{
 
 #gameField{
 	background: #383838;
-	width: 600px;
-	height: 400px;
+	width: 36%;
+	height: 50%;
 	margin: 0 auto;
 	position: absolute;
 	overflow: hidden;
@@ -41,7 +42,7 @@ body{
 #statLeft{
 	background: #383838;
 	width: 18%;
-	height: 400px;
+	height: 50%;
 	margin: 0 auto;
 	position: absolute;
 	overflow: hidden;
@@ -54,14 +55,21 @@ body{
 #statRight{
 	background: #383838;
 	width: 18%;
-	height: 400px;
+	height: 50%;
 	margin: 0 auto;
 	position: absolute;
 	overflow: hidden;
 	top: 12%;
 	right: 12%;
-	text-align: center;
+	text-align: left;
 	border-radius: 10px;
+}
+#statRight p{
+	margin: 5% 8% 2.5% 8%;
+}
+
+#marg{
+	color: #383838;
 }
 
 #progressbar1{
@@ -71,6 +79,7 @@ body{
 	top: 0;
 	left: 0;
 	background: #737373;
+	transition: .4s;
 }
 
 #progressbar2{
@@ -81,6 +90,7 @@ body{
 	left: 0;
 	background: #737373;
 	border: #000000 2px;
+	transition: .4s;
 }
 
 .ball{
@@ -103,19 +113,19 @@ body{
 	height: 25px;
 	border-radius: 50%;
 	position: absolute;
-	top: -225px;
-	left: -325px;
+	top: -275px;
+	left: -400px;
 	display: block;
 	transition: all 1s;
 }
 
 .left{
-	top: 100px;
+	top: 75%;
 	left: -100px;
 }
 
 .right{
-	top: 100px;
+	top: 75%;
 	left: 700px;
 }
 
@@ -152,20 +162,26 @@ body{
 	position: absolute;
 	top: 0;
 	left: 0;
-	font-size: 25px;
+	font-size: 1.5vw;
+	text-align: center;
 }
 #start-block button{
 	display: block;
-	margin: 30px auto;
-	padding: 25px 150px;
-	font-size: 40px;
+	margin: 5% auto;
+	padding: 5% 25%;
+	font-size: 3vb;
 	background: #737373;
 	border-radius: 20px;
 	color: #000000;
 }
 
+#gameName{
+	font-size: 6vw;	
+}
+
 #start-block p{
-	margin: 20px 50px 10px 50px;
+	margin: 5% 8% 2.5% 8%;
+
 }
 
 #end{
@@ -177,17 +193,17 @@ body{
 	background: #383838;
 	color: #fcfecd;
 	text-align: center;
-	font-size: 40px;
+	font-size: 30px;
 }
 
 #end button{
 	display: block;
-	margin: 5px auto;
-	padding: 40px 80px;
-	font-size: 30px;
+	margin: 15% auto;
+	padding: 5% 25%;
+	font-size: 3vb;
 	background: #737373;
-	color: #000000;
 	border-radius: 20px;
+	color: #000000;
 }
 
 #end h2{
@@ -201,12 +217,13 @@ body{
   /* -------------------------------------------------------------------*/
 /* The switch - the box around the slider */
 .switch {
+	margin-left: 5%;
 	position: absolute;
 	display: inline-block;
-	left: 10px;
-	top: 20px;
-	width: 50px;
-	height: 17px;
+	left: 3%;
+	top: 4.5%;
+	width: 14.5%;
+	height: 4.5%;
   }
   
   /* Hide default HTML checkbox */
@@ -232,10 +249,10 @@ body{
   .slider:before {
 	position: absolute;
 	content: "";
-	height: 12px;
-	width: 12px;
-	left: 4px;
-	bottom: 2px;
+	height: 70%;
+	width: 30%;
+	left: 10%;
+	bottom: 15%;
 	background-color: #000000;
 	-webkit-transition: .4s;
 	transition: .4s;
@@ -250,9 +267,9 @@ body{
   }
   
   input:checked + .slider:before {
-	-webkit-transform: translateX(30px);
-	-ms-transform: translateX(30px);
-	transform: translateX(30px);
+	-webkit-transform: translateX(150%);
+	-ms-transform: translateX(150%);
+	transform: translateX(150%);
   }
   
   /* Rounded sliders */

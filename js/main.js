@@ -41,7 +41,6 @@ function play(){
 	gameTimer();
 
 
-
 }
 
 start();
