@@ -37,7 +37,7 @@ body{
 	top: 15%;
 	left: 32%;
 	border-radius: 10px;
-
+	cursor: crosshair;
 }
 
 #statLeft{
@@ -170,10 +170,11 @@ body{
 	display: block;
 	margin: 5% auto;
 	padding: 5% 25%;
-	font-size: 3vb;
+	font-size: 2vw;
 	background: #737373;
 	border-radius: 20px;
 	color: #000000;
+	font-family: 'Tektur', sans-serif;
 }
 
 #gameName{
@@ -201,10 +202,11 @@ body{
 	display: block;
 	margin: 15% auto;
 	padding: 5% 25%;
-	font-size: 3vb;
+	font-size: 2vw;
 	background: #737373;
 	border-radius: 20px;
 	color: #000000;
+	font-family: 'Tektur', sans-serif;
 }
 
 #end h2{
@@ -251,8 +253,8 @@ body{
 	position: absolute;
 	content: "";
 	height: 70%;
-	width: 30%;
-	left: 10%;
+	width: 25%;
+	left: 13%;
 	bottom: 15%;
 	background-color: #000000;
 	-webkit-transition: .4s;
@@ -268,9 +270,9 @@ body{
   }
   
   input:checked + .slider:before {
-	-webkit-transform: translateX(150%);
-	-ms-transform: translateX(150%);
-	transform: translateX(150%);
+	-webkit-transform: translateX(200%);
+	-ms-transform: translateX(200%);
+	transform: translateX(200%);
   }
   
   /* Rounded sliders */
